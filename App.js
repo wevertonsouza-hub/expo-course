@@ -1,10 +1,6 @@
-import { View, Text } from "react-native";
+import CreativeComponent from "./src/class-components/native-components";
 
 export default function App() {
-  return (
-    <View>
-      <Text>INDMO</Text>
-      <Text>Expo Course!</Text>
-    </View>
-  );
+  return <CreativeComponent />; 
+     
 }
