@@ -1,17 +1,31 @@
-import { useState, useEffect } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import React from 'react';
-import Feather from '@expo/vector-icons/Feather';
-import { Fontisto } from '@expo/vector-icons';
+import { StyleSheet, Text,  View } from 'react-native';
+import React from "react";
+import { useState, useEffect } from 'react'
+import {Feather} from '@expo/vector-icons'
+import { Fontisto } from '@expo/vector-icons'
 
 const MainCard = (props) => {
     const Icon = () => {
         if(props.icon === 'morning'){
             return(
-                <Feather name="sun" style={styles.cardIcon} size={40} color="orange" />            
+                <Feather name="sun" style={styles.cardIcon} size={40} color="white" />            
 
             )
         }
+        if(props.icon === 'afternoon'){
+            return(
+                <Fontisto style={styles.cardIcon} name="day-cloudy" size={40} color="white" />           
+
+            )
+        }
+        if(props.icon === 'night'){
+            return(
+                <Feather name="cloud-rain" style={styles.cardIcon} size={40} color="white" />            
+
+            )
+        }
+
+
 
     }
 
@@ -58,14 +72,14 @@ const MainCard = (props) => {
     
     return (
         <View style={styles.card}>
-            <Text style={styles.text}>props.title</Text>
-            <Feather name="sun" style={styles.cardIcon} size={40} color="orange" />
+            <Text style={styles.text}>{props.title}</Text>
+           <Icon></Icon>
             <Text style={styles.text}>{props.temperature}</Text>
 
         </View>
     )
 }
 
-export default MainCard
+export default MainCard;
 
 
